@@ -1,19 +1,12 @@
-.368
-.model flat,stdcall
-.stack 4096
-ExitProcess proto, dwExitCode:dword
-
-.data
-
-sum DWORD ?
-
+.386
+.model small
 .code
+
+public main
 main proc
-mov eax, 7
-add eax, 4
-mov sum, eax
-
-invoke ExitProcess, 0
-
+    mov ecx, 16       ; Move immediate value 16 into ecx
+    mov eax, ecx      ; Copy value of ecx into eax
+    ret               ; return back to caller
+        ; function return value is in eax (16)
 main endp
 end main
